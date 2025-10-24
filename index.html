@@ -1,47 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dylan Wicher | Personal Home Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dylan Wicher — Personal Home Page</title>
 
-  <!-- Embedded CSS (required) -->
+  <!-- Color Palette: https://coolors.co/0b132b-1c2541-3a506b-5bc0be-f0f4f8 -->
   <style>
-    :root{ --bg:#0f172a; --card:#111827; --ink:#e5e7eb; --muted:#94a3b8; --accent:#38bdf8; --accent2:#a78bfa; --maxw:900px; }
-    body{ margin:0 auto; max-width:var(--maxw); width:92%; background:var(--bg); color:var(--ink);
-          font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6; }
-    header,main,footer{ background:var(--card); border:1px solid #1f2937; border-radius:14px; padding:1.25rem 1.5rem; margin-top:1rem; }
-    h1{ color:var(--accent); margin:.2rem 0 .4rem 0; font-size:clamp(1.8rem,2.8vw+1rem,2.4rem); }
-    h2{ color:var(--accent2); margin:0 0 .6rem 0; font-size:clamp(1.2rem,1.6vw+1rem,1.5rem); }
-    p{ margin:.4rem 0; }
-    .muted{ color:var(--muted); }
-    nav a{ color:var(--accent); text-decoration:none; border-bottom:1px dashed transparent; }
-    nav a:hover{ border-color:var(--accent); }
-    .sep{ opacity:.4; margin:0 .45rem; user-select:none; }
+    :root {
+      --ink: #0b132b;
+      --accent: #5bc0be;
+      --accent2: #3a506b;
+      --muted: #9db4c0;
+      --bg: #f0f4f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--ink), var(--accent2));
+      color: var(--bg);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: var(--ink);
+      border-bottom: 4px solid var(--accent);
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: var(--accent);
+      margin: 0;
+    }
+
+    h2 {
+      color: var(--accent2);
+      margin: 0.6rem 0;
+      font-size: clamp(1.2rem, 1.6vw + 1rem, 1.5rem);
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    main {
+      flex: 1;
+      max-width: 800px;
+      margin: 2rem auto;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 8px;
+      border-bottom: 1px dashed transparent;
+    }
+
+    nav a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    .sep {
+      opacity: 0.5;
+      margin: 0 0.35rem;
+      user-select: none;
+    }
+
+    footer {
+      background-color: var(--ink);
+      border-top: 4px solid var(--accent);
+      color: var(--bg);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .validators a {
+      color: var(--accent2);
+      text-decoration: none;
+      margin: 0 4px;
+    }
+
+    .validators a:hover {
+      text-decoration: underline;
+    }
   </style>
 
-    <script src="scripts/main.js" defer></script>
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <header>
     <h1>Dylan Wicher</h1>
     <h2>Personal Home Page</h2>
-    <p class="muted">Computer Science @ UNC Charlotte • Cybersecurity concentration</p>
+    <p class="muted">Computer Science @ UNC Charlotte • Cybersecurity Concentration</p>
   </header>
 
   <main>
-    <p>Welcome! This is my professional landing page. It links to my course work and profiles.</p>
-    <p>I’m focused on cybersecurity, hands-on projects, and building a strong portfolio.</p>
+    <p>Welcome! This is my professional landing page. It links to my coursework, projects, and profiles.</p>
+    <p>I'm focused on cybersecurity, hands-on development, and building a strong portfolio of work that combines security, creativity, and real-world problem solving.</p>
   </main>
 
   <footer>
-    <strong>Navigation</strong>
     <nav aria-label="Footer menu">
       <a href="itis3135/">ITIS3135</a><span class="sep">|</span>
       <a href="https://github.com/dwicher1" target="_blank" rel="noopener">GitHub.com</a><span class="sep">|</span>
-      <a href="https://webpages.charlotte.edu/dwicher/" target="_blank" rel="noopener">CLT Web</a><span class="sep">|</span>
-      <a href="https://dwicher1.github.io/" target="_blank" rel="noopener">GitHub.io</a><span class="sep">|</span>
+      <a href="https://github.com/dwicher1/dwicher1.github.io" target="_blank" rel="noopener">GitHub.io</a><span class="sep">|</span>
       <a href="https://www.linkedin.com/in/dylan-wicher/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="about.html">About</a>
     </nav>
-    <p class="muted">
-      <a href="https://validator.w3.org/nu/#file" target="_blank_
+
+    <p class="validators">
+      <a href="https://validator.w3.org/nu/#file" target="_blank">HTML Validator</a> |
+      <a href="https://jigsaw.w3.org/css-validator/#validate-by-upload" target="_blank">CSS Validator</a>
+    </p>
+
+    <p class="muted">Page created by <a href="wicherwebsolutions.co/">Wicher Web Solutions</a></p>
+  </footer>
+</body>
+</html>
