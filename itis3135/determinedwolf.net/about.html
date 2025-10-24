@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Determined Wolf</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Color Palette: https://coolors.co/1b2631-2e8b57-8fbc8f-f4e1d2-c7b198 -->
+  <style>
+    :root {
+      --forest-dark: #1B2631;
+      --forest-green: #2E8B57;
+      --sage: #8FBC8F;
+      --sand: #F4E1D2;
+      --tan: #C7B198;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--forest-dark), var(--forest-green));
+      font-family: "Open Sans", sans-serif;
+      color: var(--sand);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: var(--forest-dark);
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      border-bottom: 5px solid var(--sage);
+    }
+
+    h1 {
+      font-family: "Russo One", sans-serif;
+      color: var(--sage);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    h1 img {
+      width: 120px;
+      height: auto;
+      margin-left: 10px;
+      vertical-align: middle;
+      border-radius: 50%;
+      border: 2px solid var(--sage);
+    }
+
+    nav {
+      font-size: 1.2rem;
+      margin-top: 0.75rem;
+    }
+
+    nav a {
+      color: var(--tan);
+      text-decoration: none;
+      margin: 0 0.75rem;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      border-bottom: 2px solid var(--sage);
+      color: var(--sage);
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.3);
+      border: 2px solid var(--sage);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    legend {
+      font-family: "Russo One", sans-serif;
+      font-size: 1.6rem;
+      color: var(--sage);
+      padding: 0 10px;
+      text-transform: uppercase;
+    }
+
+    fieldset {
+      border: 2px solid var(--sage);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    p {
+      color: var(--sand);
+    }
+
+    footer {
+      text-align: center;
+      background-color: var(--forest-dark);
+      border-top: 5px solid var(--sage);
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: var(--sage);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+      color: var(--tan);
+    }
+
+    footer p {
+      margin-top: 0.5rem;
+      color: var(--tan);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>
+      Determined Wolf
+      <img src="images/determinedwolf.jpg">
+    </h1>
+    <nav>
+      <a href="about.html">About</a> |
+      <a href="products.html">Products</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <fieldset>
+      <legend>Mission Goal</legend>
+      <p>
+        At <strong>Determined Wolf</strong>, we craft durable, high-endurance hiking and camping gear for explorers 
+        who live to push boundaries. From alpine backpacks to stormproof tents, every product is engineered to 
+        thrive where comfort meets chaos. 
+      </p>
+      <p>
+        Inspired by the wolf’s loyalty and strength, our motto is simple: <em>“Survive the elements — and look good doing it.”</em> 
+        Whether you’re scaling cliffs, hiking ridgelines, or camping under cold stars, Determined Wolf gear gives you 
+        the confidence to go farther. Adventure doesn’t stop when the weather turns — and neither should you.
+      </p>
+    </fieldset>
+  </main>
+
+  <footer>
+    <nav>
+      <a href="https://webpages.charlotte.edu/dwicher/itis3135/">ITIS3135</a> ||
+      <a href="https://webpages.charlotte.edu/dwicher/">CLT Web</a> ||
+      <a href="https://github.com/dwicher1" target="_blank">GitHub</a> ||
+      <a href="https://dwicher1.github.io/" target="_blank">GitHub.io</a> ||
+      <a href="https://www.linkedin.com/in/dylan-wicher/" target="_blank">LinkedIn</a>
+    </nav>
+    <p>Page built by <a href="https://webpages.charlotte.edu/dwicher/itis3135/wicherwebsolutions.co/">Wicher Web Solutions</a> &copy; 2025</p>
+  </footer>
+</body>
+</html>
