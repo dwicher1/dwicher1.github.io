@@ -4,26 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dylan Wicher | ITIS 3135 Home</title>
-  <link rel="stylesheet" href="styles/default.css">
-    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/default.css" />
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>I’m Dylan Wicher and this is my ITIS3135 First Course Page</h1>
-    <h2>Course Home</h2>
-    <p class="muted">This page lives in the <code>/itis3135/</code> folder.</p>
-  </header>
+  <!-- Shared Header -->
+  <div data-include="components/header.html"></div>
+
   <main>
+    <h2>Home</h2>
     <p>Welcome to my ITIS 3135 site. Labs and assignments will appear here.</p>
-    <ul><li><em>Coming soon:</em> Labs & assignments index</li></ul>
   </main>
-  <footer>
-    <p>Wicher Web Solutions ©2025</p>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="introduction.html">Introduction</a> |
-      <a href="contract.html">Contract</a>
-    </nav>
-  </footer>
+
+  <!-- Shared Footer -->
+  <div data-include="components/footer.html"></div>
+
+  <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
