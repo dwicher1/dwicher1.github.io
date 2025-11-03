@@ -258,15 +258,21 @@
       <button id="clear-all" type="button">Clear</button>
 
       <button type="button" id="generateHtml">Generate HTML</button>
+
+      <button type="button" id="generateJson">Generate JSON</button>
     </form>
 
     <div id="outputDiv"></div>
-    <!-- HTML OUTPUT SECTION (Hidden until Generate HTML is clicked) -->
-<section id="htmlOutput" style="display:none; margin-top:25px;">
-  <h2>Introduction HTML</h2>
-  <pre><code id="htmlCode" class="language-html"></code></pre>
-</section>
+      <!-- HTML OUTPUT SECTION (Hidden until Generate HTML is clicked) -->
+  <section id="htmlOutput" style="display:none; margin-top:25px;">
+    <h2>Introduction HTML</h2>
+    <pre><code id="htmlCode" class="language-html"></code></pre>
+  </section>
 
+  <section id="jsonOutput" style="display:none; margin-top:25px;">
+  <h2>Introduction JSON</h2>
+  <pre><code id="jsonCode" class="language-json"></code></pre>
+  </section>
   </main>
 
   <footer>
@@ -274,55 +280,7 @@
   </footer>
 
   <script src="scripts/HTMLInclude.min.js"></script>
-  <script src="scripts/generate_html.js"></script>
-
-
-  <script>
-    // Preview image before displaying
-    function loadImage() {
-      const fileInput = document.getElementById('introImage');
-      const preview = document.getElementById('loadImagePreview');
-      if (fileInput.files && fileInput.files[0]) {
-        preview.src = URL.createObjectURL(fileInput.files[0]);
-      }
-    }
-
-    document.getElementById("submitButton").addEventListener("click", () => {
-      const outputDiv = document.getElementById("outputDiv");
-      const form = document.getElementById("introForm");
-
-      const imgFile = document.getElementById("introImage").files[0];
-      const imgURL = imgFile ? URL.createObjectURL(imgFile) : document.getElementById("loadImagePreview").src;
-
-      // Output content
-      outputDiv.innerHTML = `
-        <h2>Introduction</h2>
-        <h3>${firstName.value} ${middleInitial.value}. "${preferredName.value}" ${lastName.value} ${divider.value} ${mascotAdjective.value} ${mascotAnimal.value}</h3>
-        <figure>
-          <img src="${imgURL}" alt="Profile photo of ${firstName.value}">
-          <figcaption>${imageCaption.value}</figcaption>
-        </figure>
-        <ul>
-          <li><strong>Personal Statement:</strong> ${personalStatement.value}</li>
-          <li><strong>Personal Background:</strong> ${personalBackground.value}</li>
-          <li><strong>Professional Background:</strong> ${professionalBackground.value}</li>
-          <li><strong>Primary Computer:</strong> ${primaryComputer.value}</li>
-          <li><strong>Funny Fact:</strong> ${funFact.value}</li>
-          <li><strong>Something to Share:</strong> ${shareThing.value}</li>
-          <li><strong>Quote:</strong> "${quote.value}" — <i>${quoteAuthor.value}</i></li>
-        </ul>
-        <nav>
-          <a href="${cltWeb.value}" target="_blank">CLT Web</a> ||
-          <a href="${github.value}" target="_blank">GitHub</a> ||
-          <a href="${githubIo.value}" target="_blank">GitHub.io</a> ||
-          <a href="${freeCodeCamp.value}" target="_blank">freeCodeCamp</a> ||
-          <a href="${linkedIn.value}" target="_blank">LinkedIn</a>
-        </nav>
-      `;
-
-      // Hide the form after submission
-      form.style.display = "none";
-    });
-  </script>
+  <script src="scripts/generate_html.js" defer></script>
+  <script src="scripts/generate_json.js" defer></script>
 </body>
 </html>

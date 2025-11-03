@@ -1,58 +1,49 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const btn = document.getElementById("generateHtml");
-    const htmlOutput = document.getElementById("htmlOutput");
-    const codeBox = document.getElementById("htmlCode");
+    const generateBtn = document.getElementById("generateHtml");
 
-    btn.addEventListener("click", () => {
+    generateBtn.addEventListener("click", () => {
 
-        // Make sure form fields exist
-        if (!firstName || !lastName) {
-            alert("Form elements are missing or named incorrectly.");
-            return;
-        }
+        // Collect image (uploaded or default)
+        const imgFile = introImage.files[0];
+        const imgURL = imgFile ? URL.createObjectURL(imgFile) : loadImagePreview.src;
 
-        // Handle image
-        let imgFile = imgUpload.files[0];
-        let imgURL = imgFile ? URL.createObjectURL(imgFile) : "";
-
-        // Build HTML string
-        const generatedHTML = `
-<h2>Introduction</h2>
-<h3>${firstName.value} ${middleInitial.value}. "${prefName.value}" ${lastName.value} ${mascotSymbol.value} ${charMascot.value} ${animalMascot.value}</h3>
+        // Build literal HTML text
+        const htmlText =
+`<h2>Introduction HTML</h2>
+<h3>${firstName.value} ${middleInitial.value}. "${preferredName.value}" ${lastName.value} ${divider.value} ${mascotAdjective.value} ${mascotAnimal.value}</h3>
 <figure>
-    <img src="${imgURL}" alt="${imgCaption.value}">
-    <figcaption>${imgCaption.value}</figcaption>
+  <img src="${imgURL}" alt="${imageCaption.value}" />
+  <figcaption>${imageCaption.value}</figcaption>
 </figure>
 <ul>
-    <li><strong>Personal Statement:</strong> ${perStatement.value}</li>
-    <li><strong>Personal Background:</strong> ${perBackground.value}</li>
-    <li><strong>Professional Background:</strong> ${profBackground.value}</li>
-    <li><strong>Primary Computer Platform:</strong> ${PC.value}</li>
-    <li><strong>Courses I'm Taking:</strong> (Same as intro page)</li>
-    <li><strong>Funny / Interesting thing:</strong> ${funOrInt.value}</li>
-    <li><strong>Anything Else:</strong> ${share.value}</li>
-    <li><strong>Quote:</strong> "${quote.value}" — <em>${author.value}</em></li>
+  <li><strong>Personal Statement:</strong> ${personalStatement.value}</li>
+  <li><strong>Personal Background:</strong> ${personalBackground.value}</li>
+  <li><strong>Professional Background:</strong> ${professionalBackground.value}</li>
+  <li><strong>Primary Computer:</strong> ${primaryComputer.value}</li>
+  <li><strong>Funny Fact:</strong> ${funFact.value}</li>
+  <li><strong>Something to Share:</strong> ${shareThing.value}</li>
+  <li><strong>Quote:</strong> "${quote.value}" — <i>${quoteAuthor.value}</i></li>
 </ul>
 <nav>
-    <a href="${home.value}" target="_blank">CLT Web</a> ||
-    <a href="${GitHub.value}" target="_blank">GitHub</a> ||
-    <a href="${GitHubio.value}" target="_blank">GitHub.io</a> ||
-    <a href="${FCC.value}" target="_blank">freeCodeCamp</a> ||
-    <a href="${LinkedIn.value}" target="_blank">LinkedIn</a>
-</nav>
-`;
+  <a href="${cltWeb.value}" target="_blank">CLT Web</a> ||
+  <a href="${github.value}" target="_blank">GitHub</a> ||
+  <a href="${githubIo.value}" target="_blank">GitHub.io</a> ||
+  <a href="${freeCodeCamp.value}" target="_blank">freeCodeCamp</a> ||
+  <a href="${linkedIn.value}" target="_blank">LinkedIn</a>
+</nav>`;
 
-        // Show the output section
-        htmlOutput.style.display = "block";
+        // INSERT literal HTML into <code>
+        const codeBlock = document.getElementById("htmlCode");
+        codeBlock.textContent = htmlText;
 
-        // Put HTML in code block (escaped)
-        codeBox.textContent = generatedHTML;
+        // SHOW the <section>
+        document.getElementById("htmlOutput").style.display = "block";
 
-        // Highlight formatting
-        hljs.highlightElement(codeBox);
+        // Trigger highlight.js syntax coloring
+        if (window.hljs) { hljs.highlightElement(codeBlock); }
 
-        // Change headline text
+        // Change the H2 text from "Introduction Form" ➜ "Introduction HTML"
         document.querySelector("h2").textContent = "Introduction HTML";
     });
 });
