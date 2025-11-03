@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="styles/default.css" />
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 
+        <!-- Highlight.js (syntax coloring for generated HTML output) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+
   <style>
     body {
       background-color: #0b132b;
@@ -247,9 +254,19 @@
 
       <button type="button" id="submitButton">Submit</button>
       <button type="reset">Reset</button>
+
+      <button id="clear-all" type="button">Clear</button>
+
+      <button type="button" id="generateHtml">Generate HTML</button>
     </form>
 
     <div id="outputDiv"></div>
+    <!-- HTML OUTPUT SECTION (Hidden until Generate HTML is clicked) -->
+<section id="htmlOutput" style="display:none; margin-top:25px;">
+  <h2>Introduction HTML</h2>
+  <pre><code id="htmlCode" class="language-html"></code></pre>
+</section>
+
   </main>
 
   <footer>
@@ -257,6 +274,8 @@
   </footer>
 
   <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="scripts/generate_html.js"></script>
+
 
   <script>
     // Preview image before displaying
