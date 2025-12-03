@@ -1,0 +1,482 @@
+/* ===========================
+   TrailShare CLT - Earthy Theme
+   =========================== */
+
+:root {
+    --forest: #355e3b;
+    --earth: #8d6a47;
+    --cream: #f5f1e8;
+    --dark: #2f2f2f;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: var(--cream);
+    color: var(--dark);
+}
+
+/* ===== HEADER ===== */
+
+#main-header {
+    background-color: var(--forest);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#main-header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#main-header nav a:hover {
+    text-decoration: underline;
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero img {
+    width: 100%;
+    height: 600px;
+    object-fit: contain;
+    background-color: var(--cream);
+}
+
+
+.hero-text {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+}
+
+/* ===== PAGE TITLES ===== */
+
+.page-title {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ===== CARDS ===== */
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border: 2px solid var(--forest);
+    width: 260px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 12px
+
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ===== TRIPS PAGE ===== */
+
+.trip-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.trip-card img {
+    width: 100%;
+    height: 260px;        /* or 280px if you want more scenic view */
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.trip-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid var(--forest);
+    max-width: 550px;
+}
+
+
+
+/* ===== SKILLS PAGE ===== */
+
+.skills-section {
+    padding: 15px 30px;
+}
+
+.skills-section h3 {
+    color: var(--forest);
+}
+
+/* ===== CONTACT PAGE ===== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+form input, form textarea {
+    padding: 8px;
+    border: 2px solid var(--earth);
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--forest);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #284a2d;
+}
+
+.contact-img {
+    display: block;
+    width: 60%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+
+#main-footer {
+    text-align: center;
+    padding: 30px   20px;
+    background-color: var(--earth);
+    color: white;
+    margin-top: 40px;
+}
+
+.featured {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #d4cbb9; /* soft earthy tone */
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.5));
+}
+
+.mini-map img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border: 2px solid var(--forest);
+    border-radius: 6px;
+    margin-top: 15px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.mini-map img {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mini-map img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+
+.mini-map img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.trip-card h3 {
+    margin-top: 10px;
+}
+.trips-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-items: center;
+    margin-top: 40px;
+}
+
+.trip-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+.page-title {
+    margin-bottom: 40px;
+}
+.trip-card {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+.gear-card {
+    padding: 12px;
+    min-height: 340px;
+}
+.gear-grid {
+    gap: 18px;
+    justify-content: space-between;
+    max-width: 1400px;
+}
+.gear-page .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 1200px;   /* keeps it centered and clean */
+    margin: 0 auto 40px;
+    padding: 20px;
+}
+.gear-page .card img {
+    height: 180px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 6px;
+}
+
+.gear-page .card img {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 6px;
+}
+
+.gear-page .card-container {
+    row-gap: 25px; /* instead of 35px */
+}
+
+.gear-page .card h4 {
+    margin-top: 12px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+.gear-page {
+    background: #f8f6ef;
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+/* ===== SKILLS PAGE ===== */
+
+.skills-page {
+    background: #f8f6ef;
+    padding: 15px 20px;
+    border-radius: 12px;
+    width: 90%;
+    margin: 0 auto 20px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   /* FORCE 4 columns */
+    gap: 25px;                                /* balanced spacing */
+    max-width: 1500px;                         /* widen container so they fit */
+    margin: 0 auto;
+    justify-items: center;                     /* center each card */
+}
+
+.skill-card {
+    background: white;
+    border: 2px solid var(--forest);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+.skill-card img {
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.skill-card h4 {
+    margin-bottom: 12px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    color: var(--forest);
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-card ul li {
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+.skill-card {
+    max-width: 320px;   /* makes all four cards identical width */
+    width: 100%;
+    margin: 0 auto;
+}
+.skill-card {
+    min-height: 430px; /* adjust as needed: try 420, 440, etc. */
+}
+
+
+.skills-intro {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    color: #555;
+    font-size: 1.25rem;
+}
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;   /* pushes footer to the bottom */
+}
+.page-caption {
+    max-width: 700px;
+    margin: 10px auto 30px;  /* spacing above & below */
+    text-align: center;
+    color: #444;             /* soft readable text */
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+/* ===== CONTACT PAGE ===== */
+
+.contact-page {
+    background: #f8f6ef;
+    width: 90%;
+    margin: 0 auto 40px;
+    padding: 30px 20px;
+    border-radius: 12px;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    gap: 12px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: var(--forest);
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 2px solid var(--earth);
+    border-radius: 6px;
+    background: white;
+    font-size: 1rem;
+}
+
+.contact-image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    border: 3px solid var(--forest);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.contact-info {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #444;
+}
+.contact-note {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+.contact-wrapper {
+    background: #f8f6ef;
+    padding: 40px 30px;
+    margin: 30px auto 40px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 12px;
+    border: 2px solid var(--earth);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
