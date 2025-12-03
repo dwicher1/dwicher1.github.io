@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Determined Wolf Outfitters | Products</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Color Palette: https://coolors.co/1b2631-2e8b57-8fbc8f-f4e1d2-c7b198 -->
+  <style>
+    :root {
+      --forest-dark: #1B2631;
+      --forest-green: #2E8B57;
+      --sage: #8FBC8F;
+      --sand: #F4E1D2;
+      --tan: #C7B198;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--forest-dark), var(--forest-green));
+      font-family: "Open Sans", sans-serif;
+      color: var(--sand);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--forest-dark);
+      border-bottom: 5px solid var(--sage);
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    h1 {
+      font-family: "Russo One", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--sage);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    header img {
+      width: 120px;
+      height: auto;
+      vertical-align: middle;
+      margin-left: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--sage);
+    }
+
+    nav {
+      font-size: 1.2rem;
+      margin-top: 0.7rem;
+    }
+
+    nav a {
+      color: var(--tan);
+      text-decoration: none;
+      margin: 0 0.75rem;
+      border-bottom: 2px solid transparent;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--sage);
+      border-bottom: 2px solid var(--sage);
+    }
+
+    main {
+      flex: 1;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.35);
+      border-radius: 10px;
+      border: 2px solid var(--sage);
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+      font-family: "Russo One", sans-serif;
+      color: var(--sage);
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    fieldset {
+      border: 2px solid var(--sage);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    legend {
+      font-family: "Russo One", sans-serif;
+      font-size: 1.6rem;
+      color: var(--sage);
+      padding: 0 10px;
+      text-transform: uppercase;
+    }
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.75rem;
+    }
+
+    figure img {
+      border-radius: 10px;
+      border: 3px solid var(--sage);
+    }
+
+    figcaption {
+      font-family: "Russo One", sans-serif;
+      font-size: 1.5rem;
+      color: var(--sand);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .price {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--sand);
+    }
+
+    .tagline {
+      font-style: italic;
+      color: var(--tan);
+    }
+
+    footer {
+      background-color: var(--forest-dark);
+      border-top: 5px solid var(--sage);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      color: var(--tan);
+      margin: 0.25rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>
+      Determined Wolf Outfitters
+      <img src="images/determinedwolf.jpg" alt="Determined Wolf mascot">
+    </h1>
+    <nav>
+      <a href="index.html">Home</a> ||
+      <a href="products.html">Products</a> ||
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Our Gear</h2>
+
+    <fieldset>
+      <legend>Hiking Essentials</legend>
+
+      <!-- Product 1 -->
+      <div class="product">
+        <figure>
+          <img src="images/backpack.jpg" alt="Alpine Summit Backpack" width="300">
+          <figcaption>Alpine Summit Backpack</figcaption>
+        </figure>
+        <p class="price">Starting at $89.99</p>
+        <p class="tagline">“Built to endure every mile.”</p>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product">
+        <figure>
+          <img src="images/tent.jpg" alt="Stormshield All-Weather Tent" width="300">
+          <figcaption>Stormshield Tent</figcaption>
+        </figure>
+        <p class="price">Starting at $149.99</p>
+        <p class="tagline">“Shelter that laughs at storms.”</p>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product">
+        <figure>
+          <img src="images/stove.jpg" alt="Emberforge Camp Stove" width="300">
+          <figcaption>Emberforge Camp Stove</figcaption>
+        </figure>
+        <p class="price">Starting at $59.99</p>
+        <p class="tagline">“Cook anywhere. Fear nothing.”</p>
+      </div>
+
+    </fieldset>
+  </main>
+
+  <footer>
+    <nav>
+      <a href="https://webpages.charlotte.edu/dwicher/itis3135/">ITIS3135</a> ||
+      <a href="https://webpages.charlotte.edu/dwicher/">CLT Web</a>
+    </nav>
+    <p><em>Survive the elements — and look good doing it.</em></p>
+    <p>&copy; 2025 Determined Wolf Outfitters</p>
+  </footer>
+
+</body>
+</html>
