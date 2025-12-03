@@ -8,52 +8,20 @@
   <link rel="stylesheet" href="styles/default.css" />
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 
-        <!-- Highlight.js (syntax coloring for generated HTML output) -->
+  <!-- Highlight.js -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-
   <style>
-    body {
-      background-color: #0b132b;
-      color: #e0f7fa;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0 auto;
-      max-width: 950px;
-      padding: 1rem;
-    }
-
-    header, footer {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    main {
-      background-color: #1c2541;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    }
-
-    fieldset {
-      border: 2px solid #5bc0be;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-    }
-
-    legend {
-      color: #5bc0be;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
+    body { max-width: 900px; margin: auto; }
+    main { padding: 1rem; }
+    form { margin-bottom: 2rem; }
+    #outputDiv { margin-top: 2rem; }
 
     label {
       display: block;
       margin-top: 0.6rem;
-      color: #b8d8d8;
       font-weight: 600;
     }
 
@@ -61,71 +29,18 @@
     input[type="url"],
     input[type="file"],
     textarea {
+      display: block;
       width: 100%;
-      max-width: 600px;
-      padding: 0.4rem;
-      margin-top: 0.3rem;
-      border-radius: 5px;
-      border: 1px solid #3a506b;
-      background-color: #132238;
-      color: #e0f7fa;
+      margin-bottom: 0.6rem;
     }
 
-    input[type="checkbox"] {
-      transform: scale(1.2);
-      margin-right: 8px;
-    }
-
-    .ack-row {
-      display: flex;
-      align-items: center;
-      margin-top: 0.7rem;
-      margin-bottom: 0.7rem;
-    }
-
-    button {
-      background-color: #5bc0be;
-      color: #0b132b;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin-right: 0.5rem;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #3a506b;
-      color: #fff;
-    }
-
-    img {
-      margin-top: 10px;
-      max-width: 300px;
+    #loadImagePreview {
+      max-width: 200px;
+      height: auto;
       border-radius: 5px;
       border: 1px solid #5bc0be;
-    }
-
-    #outputDiv {
-      margin-top: 2rem;
-      background-color: #132238;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border: 2px solid #5bc0be;
-    }
-
-    #outputDiv h2, #outputDiv h3 {
-      color: #5bc0be;
-    }
-
-    nav a {
-      color: #5bc0be;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
+      display: block;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -133,154 +48,198 @@
 <body>
   <header>
     <div data-include="components/header.html"></div>
-    <h2>Introduction Form</h2>
+    <h2 id="pageTitle">Introduction Form</h2>
   </header>
 
   <main>
-    <h3>Please submit the form below.</h3>
+  <h3 id="submitMsg">Please submit the form below.</h3>
 
-    <form id="introForm">
-      <!-- Name Information -->
-      <fieldset>
-        <legend>Name Information</legend>
-        <label for="firstName">First Name:</label>
-        <input id="firstName" type="text" value="Dylan" required>
+  <form id="introForm">
 
-        <label for="middleInitial">Middle Initial:</label>
-        <input id="middleInitial" type="text" value="A">
+    <!-- NAME INFORMATION -->
+    <fieldset>
+      <legend>Name Information</legend>
 
-        <label for="lastName">Last Name:</label>
-        <input id="lastName" type="text" value="Wicher" required>
+      <label for="firstName">First Name:</label>
+      <input id="firstName" type="text" value="Dylan" required>
 
-        <label for="preferredName">Preferred Name:</label>
-        <input id="preferredName" type="text" value="DW">
-      </fieldset>
+      <label for="middleInitial">Middle Initial:</label>
+      <input id="middleInitial" type="text" value="A">
 
-      <!-- Acknowledgment -->
-      <fieldset>
-        <legend>Acknowledgment Information</legend>
-        <label for="ackStatement">Acknowledgment Statement:</label>
-        <input id="ackStatement" type="text" value="I acknowledge that all content posted here is public. - DW" required>
+      <label for="lastName">Last Name:</label>
+      <input id="lastName" type="text" value="Wicher" required>
 
-        <div class="ack-row">
-          <input type="checkbox" id="ackCheckbox">
-          <label for="ackCheckbox">I acknowledge the above statement.</label>
-        </div>
+      <label for="preferredName">Preferred Name:</label>
+      <input id="preferredName" type="text" value="DW">
+    </fieldset>
 
-        <label for="ackDate">Date:</label>
-        <input id="ackDate" type="text" value="10/27/2025" readonly>
-      </fieldset>
+    <!-- ACKNOWLEDGMENT -->
+    <fieldset>
+      <legend>Acknowledgment Information</legend>
 
-      <!-- Mascot Info -->
-      <fieldset>
-        <legend>Mascot Information</legend>
-        <label for="mascotAdjective">Mascot Adjective:</label>
-        <input id="mascotAdjective" type="text" value="Determined">
+      <label for="ackStatement">Acknowledgment Statement:</label>
+      <input id="ackStatement" type="text" 
+             value="I acknowledge that all content posted here is public. - DW" required>
 
-        <label for="mascotAnimal">Mascot Animal:</label>
-        <input id="mascotAnimal" type="text" value="Wolf">
+      <div class="ack-row">
+        <input type="checkbox" id="ackCheckbox">
+        <label for="ackCheckbox">I acknowledge the above statement.</label>
+      </div>
 
-        <label for="divider">Divider Symbol:</label>
-        <input id="divider" type="text" value="~">
-      </fieldset>
+      <label for="ackDate">Date:</label>
+      <input id="ackDate" type="text" value="10/27/2025" readonly>
+    </fieldset>
 
-      <!-- Picture -->
-      <fieldset>
-        <legend>Picture Information</legend>
-        <label for="introImage">Upload Image:</label>
-        <input type="file" id="introImage" accept="image/*">
-        <button type="button" onclick="loadImage()">Click to Load</button>
-        <div id="loadImage">
-          <img id="loadImagePreview" src="images/linkedin.jpg" alt="Dylan Wicher" />
-        </div>
-        <label for="imageCaption">Image Caption:</label>
-        <input id="imageCaption" type="text" value="Cybersecurity student at UNC Charlotte.">
-      </fieldset>
+    <!-- ⭐ NEW FIELDSET ADDED HERE -->
+    <fieldset>
+      <legend>Academic Information</legend>
 
-      <!-- Background -->
-      <fieldset>
-        <legend>Background Information</legend>
-        <label for="personalStatement">Personal Statement:</label>
-        <textarea id="personalStatement" rows="3">Hey everyone! I'm Dylan Wicher, a Computer Science major concentrating in Cybersecurity at UNC Charlotte. I’m passionate about ethical hacking, digital forensics, and secure systems design.</textarea>
+      <label for="academicBackground">Academic Background:</label>
+      <input id="academicBackground" type="text"
+             value="I’m a CS major concentrating in cybersecurity. Transferred from WCU, now working on GPA improvement.">
 
-        <label for="personalBackground">Personal Background:</label>
-        <input id="personalBackground" type="text" value="From North Carolina; love hiking, trading, and developing web projects.">
+      <label for="courseBackground">Background in the Course:</label>
+      <input id="courseBackground" type="text"
+             value="I’m taking ITIS 3135 this semester to learn web design principles.">
 
-        <label for="professionalBackground">Professional Background:</label>
-        <input id="professionalBackground" type="text" value="Aspiring cybersecurity analyst with experience in Java, C, and web development.">
+      <label for="coursesList">Courses I’m Taking:</label>
+      <input id="coursesList" type="text"
+             value="ITIS 3135, ITSC 2181, CJUS 2340, MATH 2164, METR 1102">
+    </fieldset>
+    <!-- ⭐ END OF NEW FIELDSET -->
 
-        <label for="primaryComputer">Primary Computer:</label>
-        <input id="primaryComputer" type="text" value="Dell Inspiron 16 Plus, Intel i7 12700H, Nvidia RTX 3060">
-      </fieldset>
+    <!-- MASCOT -->
+    <fieldset>
+      <legend>Mascot Information</legend>
 
-      <!-- Quote -->
-      <fieldset>
-        <legend>Quote Information</legend>
-        <label for="quote">Favorite Quote:</label>
-        <input id="quote" type="text" value="The future belongs to those who believe in the beauty of their dreams.">
+      <label for="mascotAdjective">Mascot Adjective:</label>
+      <input id="mascotAdjective" type="text" value="Determined">
 
-        <label for="quoteAuthor">Quote Author:</label>
-        <input id="quoteAuthor" type="text" value="Elanor Roosevelt">
-      </fieldset>
+      <label for="mascotAnimal">Mascot Animal:</label>
+      <input id="mascotAnimal" type="text" value="Wolf">
 
-      <!-- Fun -->
-      <fieldset>
-        <legend>Optional Information</legend>
-        <label for="funFact">Something Fun About Me:</label>
-        <input id="funFact" type="text" value="I have been to almost every country in Europe.">
+      <label for="divider">Divider Symbol:</label>
+      <input id="divider" type="text" value="~">
+    </fieldset>
 
-        <label for="shareThing">Something I'd Like to Share:</label>
-        <input id="shareThing" type="text" value="Currently building a personal cybersecurity portfolio website.">
-      </fieldset>
+    <!-- PICTURE -->
+    <fieldset>
+      <legend>Picture Information</legend>
 
-      <!-- Links -->
-      <fieldset>
-        <legend>Link Information</legend>
-        <label for="cltWeb">CLT Web:</label>
-        <input id="cltWeb" type="url" value="https://webpages.charlotte.edu/dwicher/">
+      <label for="introImage">Upload Image:</label>
+      <input type="file" id="introImage" accept="image/*">
 
-        <label for="github">GitHub:</label>
-        <input id="github" type="url" value="https://github.com/dwicher1">
+      <button type="button" onclick="loadImage()">Click to Load</button>
 
-        <label for="githubIo">GitHub.io:</label>
-        <input id="githubIo" type="url" value="https://github.com/dwicher1/dwicher1.github.io/">
+      <div id="loadImage">
+        <img id="loadImagePreview" src="images/linkedin.jpg" 
+             alt="Dylan Wicher">
+      </div>
 
-        <label for="linkedIn">LinkedIn:</label>
-        <input id="linkedIn" type="url" value="https://www.linkedin.com/in/dylan-wicher/">
+      <label for="imageCaption">Image Caption:</label>
+      <input id="imageCaption" type="text" 
+             value="Cybersecurity student at UNC Charlotte.">
+    </fieldset>
 
-        <label for="freeCodeCamp">freeCodeCamp:</label>
-        <input id="freeCodeCamp" type="url" value="https://www.freecodecamp.org/dwicher">
-      </fieldset>
+    <!-- BACKGROUND -->
+    <fieldset>
+      <legend>Background Information</legend>
 
-      <button type="button" id="submitButton">Submit</button>
-      <button type="reset">Reset</button>
+      <label for="personalStatement">Personal Statement:</label>
+      <textarea id="personalStatement" rows="3">
+Hey everyone! I'm Dylan Wicher, a Computer Science major concentrating in Cybersecurity at UNC Charlotte.
+I’m passionate about ethical hacking, digital forensics, and secure systems design.</textarea>
 
-      <button id="clear-all" type="button">Clear</button>
+      <label for="personalBackground">Personal Background:</label>
+      <input id="personalBackground" type="text" 
+             value="From North Carolina; love hiking, trading, and developing web projects.">
 
-      <button type="button" id="generateHtml">Generate HTML</button>
+      <label for="professionalBackground">Professional Background:</label>
+      <input id="professionalBackground" type="text" 
+             value="Aspiring cybersecurity analyst with experience in Java, C, and web development.">
 
-      <button type="button" id="generateJson">Generate JSON</button>
-    </form>
+      <label for="primaryComputer">Primary Computer:</label>
+      <input id="primaryComputer" type="text" 
+             value="Dell Inspiron 16 Plus, Intel i7 12700H, Nvidia RTX 3060">
+    </fieldset>
 
-    <div id="outputDiv"></div>
-      <!-- HTML OUTPUT SECTION (Hidden until Generate HTML is clicked) -->
+    <!-- QUOTE -->
+    <fieldset>
+      <legend>Quote Information</legend>
+
+      <label for="quote">Favorite Quote:</label>
+      <input id="quote" type="text" 
+             value="The future belongs to those who believe in the beauty of their dreams.">
+
+      <label for="quoteAuthor">Quote Author:</label>
+      <input id="quoteAuthor" type="text" value="Eleanor Roosevelt">
+    </fieldset>
+
+    <!-- OPTIONAL -->
+    <fieldset>
+      <legend>Optional Information</legend>
+
+      <label for="funFact">Something Fun About Me:</label>
+      <input id="funFact" type="text" 
+             value="I have been to almost every country in Europe.">
+
+      <label for="shareThing">Something I'd Like to Share:</label>
+      <input id="shareThing" type="text" 
+             value="Currently building a personal cybersecurity portfolio website.">
+    </fieldset>
+
+    <!-- LINKS -->
+    <fieldset>
+      <legend>Link Information</legend>
+
+      <label for="cltWeb">CLT Web:</label>
+      <input id="cltWeb" type="url" value="https://webpages.charlotte.edu/dwicher/">
+
+      <label for="github">GitHub:</label>
+      <input id="github" type="url" value="https://github.com/dwicher1">
+
+      <label for="githubIo">GitHub.io:</label>
+      <input id="githubIo" type="url" value="https://github.com/dwicher1/dwicher1.github.io/">
+
+      <label for="linkedIn">LinkedIn:</label>
+      <input id="linkedIn" type="url" 
+             value="https://www.linkedin.com/in/dylan-wicher/">
+
+      <label for="freeCodeCamp">freeCodeCamp:</label>
+      <input id="freeCodeCamp" type="url" 
+             value="https://www.freecodecamp.org/dwicher">
+    </fieldset>
+
+    <!-- BUTTONS -->
+    <button type="button" id="submitButton">Submit</button>
+    <button type="reset">Reset</button>
+    <button id="clear-all" type="button">Clear</button>
+    <button type="button" id="generateHtml">Generate HTML</button>
+    <button type="button" id="generateJson">Generate JSON</button>
+
+  </form>
+
+  <div id="outputDiv"></div>
+
   <section id="htmlOutput" style="display:none; margin-top:25px;">
     <h2>Introduction HTML</h2>
     <pre><code id="htmlCode" class="language-html"></code></pre>
   </section>
 
   <section id="jsonOutput" style="display:none; margin-top:25px;">
-  <h2>Introduction JSON</h2>
-  <pre><code id="jsonCode" class="language-json"></code></pre>
+    <h2>Introduction JSON</h2>
+    <pre><code id="jsonCode" class="language-json"></code></pre>
   </section>
-  </main>
+
+</main>
 
   <footer>
     <div data-include="components/footer.html"></div>
   </footer>
 
   <script src="scripts/HTMLInclude.min.js"></script>
-  <script src="scripts/generate_html.js" defer></script>
-  <script src="scripts/generate_json.js" defer></script>
+  <script src="scripts/introduction.js"></script>
+  <script src="scripts/generate_html.js"></script>
+  <script src="scripts/generate_json.js"></script>
 </body>
 </html>

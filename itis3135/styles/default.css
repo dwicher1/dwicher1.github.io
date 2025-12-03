@@ -8,6 +8,11 @@
   --maxw: 880px;
 }
 
+/* 🔧 FIX: Prevent width + padding overflow warning */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* ===== BASE LAYOUT ===== */
 body {
   margin: 0 auto;
@@ -55,14 +60,14 @@ a:hover {
 
 /* 1. Foundational main styling */
 main {
-  width: 90%;           /* Gives flexible width */
-  max-width: 1200px;    /* Prevents stretching too wide */
-  margin: 0 auto;       /* Centers content */
+  width: 90%;         
+  max-width: 1200px;  
+  margin: 0 auto;     
 }
 
 /* 2. MEDIA QUERIES */
 
-/* --- Laptops and small desktops (981px–1400px) --- */
+/* --- Laptops (981px–1400px) --- */
 @media screen and (min-width: 981px) and (max-width: 1400px) {
   main {
     width: 92%;
@@ -76,13 +81,14 @@ main {
   }
 }
 
-/* --- Mobile devices (≤600px) --- */
+/* --- Mobile (≤600px) --- */
 @media screen and (max-width: 600px) {
   main {
     width: 100%;
   }
 
   body {
+    box-sizing: border-box;  
     width: 100%;
     max-width: none;
     padding: 0 0.5rem;
@@ -93,3 +99,4 @@ main {
     padding: 1rem;
   }
 }
+
