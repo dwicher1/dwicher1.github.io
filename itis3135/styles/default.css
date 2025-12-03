@@ -100,3 +100,12 @@ main {
   }
 }
 
+.review-img {
+    width: 70%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto 20px;
+    border: 2px solid var(--forest);
+    border-radius: 8px;
+}
+
