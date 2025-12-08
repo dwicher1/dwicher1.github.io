@@ -1,7 +1,7 @@
 // --- IMAGE ZOOM MODAL ---
 const zoomImages = document.querySelectorAll(".zoomable");
 
-zoomImages.forEach(img => {
+zoomImages.forEach((img) => {
     img.addEventListener("click", () => {
         const modal = document.createElement("div");
         modal.classList.add("img-modal");
@@ -11,6 +11,7 @@ zoomImages.forEach(img => {
         modal.addEventListener("click", () => modal.remove());
     });
 });
+
 
 
 // --- DARK MODE BUTTON ---
@@ -32,20 +33,18 @@ function attachDarkModeButton() {
 
 attachDarkModeButton();
 
-document.querySelectorAll(".rating").forEach(rating => {
-    
+document.querySelectorAll(".rating").forEach((rating) => {
+
     const stars = rating.querySelectorAll("span");
 
-    stars.forEach(star => {
+    stars.forEach((star) => {
         star.addEventListener("click", () => {
             const selected = parseInt(star.dataset.star);
-            
-            // Update active stars
-            stars.forEach(s => {
+
+            stars.forEach((s) => {
                 s.classList.toggle("active", parseInt(s.dataset.star) <= selected);
             });
 
-            // Save rating to element (in case you want to use it later)
             rating.dataset.rating = selected;
             console.log("Rating set to:", selected);
         });
